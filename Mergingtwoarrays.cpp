@@ -33,7 +33,7 @@ public:
 	}
 	int nextgap(int gap)
 	{
-	    if(gap <= 0)
+	    if(gap <= 1)
 	    {
 	        return 0;
 	    }
