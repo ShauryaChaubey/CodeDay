@@ -1,7 +1,16 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+long long int mergeSort(long long int* , long long int , long long int );
+
+void merge(long long int*, long long int , long long int, long long int);
+
 long long int inversionCount(long long arr[], long long N)
 {
     long long int count=0;
     count = mergeSort(arr, 1, N);
+    return count;
 }
 long long int mergeSort(long long int arr[], long long int start, long long int end)
 {
@@ -33,8 +42,8 @@ void merge(long long int arr[], long long int start, long long int mid, long lon
         a2[j] = arr[mid+j];
     }
 
-    a1[n1+1] = INFINITY;
-    a2[n2+1] = INFINITY;
+    a1[n1+1] = INT_MAX;
+    a2[n2+1] = INT_MAX;
 
     i = 1;
     j = 1;
@@ -53,3 +62,16 @@ void merge(long long int arr[], long long int start, long long int mid, long lon
         }
     }
 }
+
+int main()
+{
+   long long int arr[1000],n,i,count=0;
+   cin >> n;
+   for(i=0;i<n;i++)
+   {
+       cin >> arr[i];
+   }
+   count = inversionCount(arr,n);
+   cout << count;
+}
+
