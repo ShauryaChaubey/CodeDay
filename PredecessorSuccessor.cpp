@@ -8,17 +8,13 @@ void findPreSuc(Node* root, Node*& pre, Node*& suc, int key)
         {
             pre = root->left;
             while(pre->right)
-            {
                 pre = pre->right;
-            }
         }
         if(root->right)
         {
             suc = root->right;
             while(suc->left)
-            {
                 suc = suc->left;
-            }
         }
     }
     else if(root->key > key)
