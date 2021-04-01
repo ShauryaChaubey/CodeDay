@@ -18,6 +18,7 @@ int main()
 			cin >> a >> b;
 			range.push_back({a,b});
 		}
+		
 		sort(range.begin(), range.end());
 		ll indx = 0;
 		for(ll i=1;i<range.size();i++)
@@ -25,7 +26,7 @@ int main()
 			if(range[indx].second >= range[i].first)
 			{
 				range[indx].second = max(range[i].second,
-				 range[indx].second);
+				range[indx].second);
 			}
 			else
 			{
