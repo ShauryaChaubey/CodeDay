@@ -1,12 +1,12 @@
 bool detectLoop(Node* head)
     {
-        Node* frwd = head;
-        Node* bck = head;
-        while(frwd != NULL && bck != NULL && frwd->next != NULL)
+        Node* fast = head;
+        Node* slow = head;
+        while(fast != NULL && slow != NULL && fast->next != NULL)
         {
-            frwd = frwd->next->next;
-            bck = bck->next;
-            if(frwd == bck)
+            fast = fast->next->next;
+            slow = slow->next;
+            if(slow == fast)
               return true;
         }
         return false;
