@@ -4,12 +4,8 @@ void threeWayPartition(vector<int>& array,int a, int b)
         for(int i=0;i<=j;i++)
         {
             if(array[i] < a)
-            {
                 swap(array[i], array[k++]);
-            }
             else if(array[i] > b)
-            {
                 swap(array[i--], array[j--]);
-            }
         }
     }
