@@ -10,7 +10,6 @@ void reverse(Node *head)
                 swap(c->data, p->data);
             }
         }
-        //return head;
     }
     Node* addOne(Node *head) 
     {
