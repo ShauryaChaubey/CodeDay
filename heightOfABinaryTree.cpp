@@ -1,3 +1,5 @@
+//iterative approch
+
 int height(struct Node* node)
     {
        int h=0;
@@ -18,4 +20,15 @@ int height(struct Node* node)
           h++;
       }
       return h;
+    }
+
+//recursive approch
+
+    int height(struct Node* node)
+    {
+        if(node == NULL)
+          return 0;
+        int lt = height(node->left);
+        int rt = height(node->right);
+        return 1 + max(lt, rt);
     }
