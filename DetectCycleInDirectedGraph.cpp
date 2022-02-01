@@ -31,3 +31,36 @@ bool solve(int src, vector<int> &visit, vector<int> &order, vector<int> adj[])
 	   	}
 	   	return false;
 	}
+
+
+	//striver dfs
+	bool dfs(vector<int> adj[], vector<int> &vis, vector<int> &dvis, int s)
+    {
+        vis[s] = 1;
+        dvis[s] = 1;
+        for(auto it: adj[s])
+        {
+            if(!vis[it]) 
+            {
+                if(dfs(adj, vis, dvis, it)) return true;
+            }
+            else if(dvis[it] == 1) return true;
+        }
+        dvis[s] = 0;
+        return false;
+    }
+    // Function to detect cycle in a directed graph.
+    bool isCyclic(int V, vector<int> adj[]) 
+    {
+        vector<int> vis(V, 0);
+        vector<int> dvis(V, 0);
+        for(int i=0; i<V; i++)
+        {
+            if(!vis[i])
+            {
+                if(dfs(adj, vis, dvis, i)) return true;
+            }
+        }
+        
+        return false;
+    }
